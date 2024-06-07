@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CLIPAway is a novel framework that leverages CLIP embeddings to focus on background regions while excluding foreground elements. CLIPAway enhances inpainting accuracy and quality by identifying embeddings that prioritize the background, thus achieving seamless object removal.">
+  <meta name="keywords" content="Object Removal, Inpainting, Diffusion Models, CLIP, Focused Embeddings, AlphaCLIP, IP-Adapter, Stable Diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLIPAway</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://www.w3counter.com/tracker.js?id=152604"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span style="background: linear-gradient(to right, rgb(75, 139, 251), rgb(255, 123, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              CLIPAway:
+            </span>
+            <span>
+            Harmonizing Focused Embeddings for Removing Objects via Diffusion Models
+          </span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://yigitekin.github.io">Yiğit Ekin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://abyildirim.com">Ahmet Burak Yıldırım</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Erdem Eren Çağlar<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://aykuterdem.github.io">Aykut Erdem</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://web.cs.hacettepe.edu.tr/~erkut/">Erkut Erdem</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.cs.bilkent.edu.tr/~adundar/">Ayşegül Dündar</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Bilkent University</span>
+            <span class="author-block"><sup>2</sup>Hacettepe University</span>
+            <span class="author-block"><sup>3</sup>Koç University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="null"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="null"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Advanced image editing techniques, particularly inpainting, are essential for seamlessly removing unwanted elements while preserving visual integrity. 
+            Traditional GAN-based methods have achieved notable success, but recent advancements in diffusion models have produced superior results due to their training on large-scale datasets, 
+            enabling the generation of remarkably realistic inpainted images. Despite their strengths, diffusion models often struggle with object removal tasks without explicit guidance, 
+            leading to unintended hallucinations of the removed object. 
+          </p>
+          <p>
+            To address this issue, we introduce CLIPAway, a novel approach leveraging CLIP embeddings to focus on background regions while excluding foreground elements. CLIPAway enhances inpainting accuracy and quality by identifying embeddings that prioritize the background, thus achieving seamless object removal. 
+            Unlike other methods that rely on specialized training datasets or costly manual annotations, CLIPAway provides a flexible, plug-and-play solution compatible with various diffusion-based inpainting techniques. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column has-text-justified" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <h2 class="title is-3 has-text-justified">Method</h2>
+          <img src="./static/images/method.png" alt="Method">
+          <br/>
+          <p>
+            <span style="background: linear-gradient(to right, rgb(4, 91, 243), rgb(255, 102, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              Training
+            </span>
+            aims to learn a mapping from AlphaCLIP's embedding space to IP-Adapter's embedding space. 
+            This is achieved by training a <b>MLP</b> that maps the output of AlphaCLIP to the format expected by IP-Adapter. We give AlphaCLIP a full 
+            mask (so that it focuses on the whole image) and the source image, project it using the mlp and apply MSE loss with the clip image embeddings of the same image for the specified clip image encoder of IP-Adapter.
+            <span style="background: linear-gradient(to right, rgb(4, 91, 243), rgb(255, 102, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: auto; display: inline;">
+              <br/>
+              <br/>
+              Inference
+            </span> is done by giving both pairs of source image and mask and source image and 1-mask to AlphaCLIP and projecting the embeddings to the IP-Adapter's embedding space using the trained MLP.
+            Then, we give the projected embeddings to the projection block to remove the object from the embeddings. This is done by subtracting the background-focused embeddings projection of foreground-focused embeddings from itself.
+            Finally, we give the modified embeddings to the IP-Adapter's generator to get the inpainted image.
+          </p>
+        </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Results</h2>
+          <p>We compare our object removal results with the state-of-the-art models below and show the results of our model on the COCO2017 validation dataset.</p>
+         <img src="./static/images/results.png" alt="Comparison results of COCO2017">
+        </div>
+      </div>
+    </div>
+      <div class="column is-full-width">
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Focused Embeddings</h2>
+          <p>We display the effect of our projection block by displaying unconditional image generation for foreground-focused, background-focused and projected embeddings</p>
+         <img src="./static/images/proj.png" alt="Effect of projection block results">
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        
+        <div class="content has-text-centered">
+          <h2 class="title is-3">Related Links</h2>
+          <p>
+            Our work has been inspired by many recent works in the field. Here are some of the most relevant ones:
+          </p>
+          <p>
+            <a href="https://ip-adapter.github.io">IP-Adapter: Text Compatible Image Prompt Adapter for Text-to-Image Diffusion Models</a> 
+          </p>
+          <p>
+            <a href="https://aleafy.github.io/alpha-clip/">Alpha-CLIP: A CLIP Model Focusing on Wherever You Want</a> 
+          </p>
+          <p>
+            <a href="http://instinpaint.abyildirim.com">Inst-Inpaint: Instructing to Remove Objects with Diffusion Models</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>TODO:</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content" style="display: flex; justify-content: center; align-items: center;">
+          <p>
+            This webpage is adapted from this <a href="https://github.com/nerfies/nerfies.github.io">template</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
