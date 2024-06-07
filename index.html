@@ -164,7 +164,7 @@
           <br/>
           <p>
             <span style="background: linear-gradient(to right, rgb(4, 91, 243), rgb(255, 102, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-              Training
+              <b>Training</b>
             </span>
             aims to learn a mapping from AlphaCLIP's embedding space to IP-Adapter's embedding space. 
             This is achieved by training a <b>MLP</b> that maps the output of AlphaCLIP to the format expected by IP-Adapter. We give AlphaCLIP a full 
@@ -172,7 +172,7 @@
             <span style="background: linear-gradient(to right, rgb(4, 91, 243), rgb(255, 102, 0)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: auto; display: inline;">
               <br/>
               <br/>
-              Inference
+              <b>Inference</b>
             </span> is done by giving both pairs of source image and mask and source image and 1-mask to AlphaCLIP and projecting the embeddings to the IP-Adapter's embedding space using the trained MLP.
             Then, we give the projected embeddings to the projection block to remove the object from the embeddings. This is done by subtracting the background-focused embeddings projection of foreground-focused embeddings from itself.
             Finally, we give the modified embeddings to the IP-Adapter's generator to get the inpainted image.
@@ -185,8 +185,8 @@
       <div class="column is-full-width">
         <div class="content">
           <h2 class="title is-3">Results</h2>
-          <p>We compare our object removal results with the state-of-the-art models below and show the results of our model on the COCO2017 validation dataset.</p>
-         <img src="./static/images/results.png" alt="Comparison results of COCO2017">
+          <p>We compare our object removal results with the state-of-the-art models below and show the results of our model on the COCO 2017 validation dataset.</p>
+         <img src="./static/images/results.png" alt="Comparison results of COCO 2017">
         </div>
       </div>
     </div>
