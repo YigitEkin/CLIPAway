@@ -28,6 +28,8 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="static/css/spinner.css">
+  <script src="static/js/spinner.js"></script>
 </head>
 <body>
 
@@ -186,7 +188,8 @@
         <div class="content">
           <h2 class="title is-3">Results</h2>
           <p>We compare our object removal results with the state-of-the-art models below and show the results of our model on the COCO 2017 validation dataset.</p>
-         <img src="./static/images/results.png" alt="Comparison results of COCO 2017">
+          <div class="spinner" id="spinner-results"></div>
+          <img src="./static/images/results.png" alt="Comparison results of COCO 2017" onload="hideSpinner('spinner-results')" loading="lazy">
         </div>
       </div>
     </div>
@@ -194,10 +197,12 @@
         <div class="content has-text-centered">
           <h2 class="title is-3">Focused Embeddings</h2>
           <p>We display the effect of our projection block by displaying unconditional image generation for foreground-focused, background-focused and projected embeddings</p>
-         <img src="./static/images/proj.png" alt="Effect of projection block results">
+          <div class="spinner" id="spinner-proj"></div>
+          <img src="./static/images/proj.png" alt="Effect of projection block results" onload="hideSpinner('spinner-proj')" loading="lazy">
+        </div>
         </div>
       </div>
-    </div>
+      </div>
     <!--/ Matting. -->
 
     <!-- Concurrent Work. -->
