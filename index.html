@@ -156,9 +156,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered has-text-centered">
-
       <!-- Visual Effects. -->
       <div class="column has-text-justified" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
           <h2 class="title is-3 has-text-justified">Method</h2>
@@ -181,6 +179,16 @@
           </p>
         </div>
     </div>
+
+    <div class="column is-full-width">
+      <div class="content has-text-centered is-centered">
+        <h2 class="title is-3" style="text-align: center;">Comparison with SD-Inpaint</h2>
+        <p>We compare our object removal results with the state-of-the-art inpainting method SD-Inpaint</p>
+        <div class="spinner" id="spinner-comparison"></div>
+        <img src="./static/images/sdinpaint_comparison.png" alt="Comparison results of COCO 2017" onload="hideSpinner('spinner-comparison')" loading="lazy">
+      </div>
+    </div>
+  </div>
     <div class="columns is-centered has-text-centered">
 
       <!-- Visual Effects. -->
