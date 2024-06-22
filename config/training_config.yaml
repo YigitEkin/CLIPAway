@@ -1,0 +1,18 @@
+data_path: train2017 #update path according to your dataset if needed
+val_path: test2017 #update path according to your dataset if needed
+train_batch_size: 8
+val_batch_size: 8
+lr: 1e-5
+weight_decay: 1e-4
+eval_interval: 1000
+save_interval: 1000
+save_path: ckpts/train
+image_encoder_path: ckpts/IPAdapter/image_encoder
+alpha_vision_ckpt_pth: ckpts/AlphaCLIP/clip_l14_grit+mim_fultune_6xe.pth
+mlp_projection_layer_ckpt_path: null
+alpha_clip_id: ViT-L/14
+epochs: 20
+number_of_hidden_layers: 6
+alpha_clip_embed_dim: 768
+ip_adapter_embed_dim: 1024
+device: "cuda"

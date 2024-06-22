@@ -1,0 +1,52 @@
+name: clipaway
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - bzip2=1.0.8
+  - ca-certificates
+  - ld_impl_linux-64
+  - libffi
+  - libgcc-ng
+  - libgomp
+  - libstdcxx-ng
+  - libuuid
+  - ncurses
+  - openssl
+  - pip
+  - python=3.10
+  - readline
+  - setuptools
+  - sqlite
+  - tk
+  - wheel
+  - xz
+  - zlib
+  - pip:
+    - accelerate==0.28.0
+    - einops==0.7.0
+    - ftfy==6.2.0
+    - gdown==5.1.0
+    - diffusers==0.29.0
+    - numpy==1.26.4
+    - omegaconf==2.3.0
+    - opencv-python==4.9.0.80
+    - pandas==2.2.2
+    - pillow==10.3.0
+    - pycparser==2.22
+    - regex==2023.12.25
+    - setuptools==69.5.1
+    - torch==2.3.0
+    - torchvision==0.18.0
+    - gradio==3.48.0
+    - tqdm==4.66.2
+    - traitlets==5.14.3
+    - transformers==4.39.3
+    - clean-fid
+    - absl-py
+    - git+https://github.com/openai/CLIP.git
+    - git+https://github.com/tencent-ailab/IP-Adapter.git
+    - -e AlphaCLIP/
+    - loralib

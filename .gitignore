@@ -1,0 +1,7 @@
+test
+outputs
+wandb
+model/__pycache__/
+dataset/__pycache__/
+submit_gpu_job.sh
+ckpts
