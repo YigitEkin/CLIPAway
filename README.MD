@@ -1,10 +1,11 @@
 # CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models
 
-[Paper](https://arxiv.org/abs/2406.09368) | [Project Website](https://yigitekin.github.io/CLIPAway/) | [BibTeX](#bibtex)
+[Paper](https://arxiv.org/abs/2406.09368) | [Project Website](https://yigitekin.github.io/CLIPAway/) | [Demo](https://huggingface.co/spaces/yigitekin/CLIPAway) | [BibTeX](#bibtex)
 
 ![CLIPAway Teaser](./assets/teaser.png)
 
 **CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models**
+
 Yiğit Ekin, Ahmet Burak Yildirim, Erdem Eren Çağlar, Aykut Erdem, Erkut Erdem, Aysegul Dundar
 
 ### **Abstract:** 
