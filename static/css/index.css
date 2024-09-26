@@ -155,3 +155,8 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.nips-text {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 2.5rem;
+}
