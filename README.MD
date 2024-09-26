@@ -1,19 +1,20 @@
-# CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models
+# CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models [NeurIPS 2024]
+[Yiğit Ekin](https://yigitekin.github.io/), [Ahmet Burak Yildirim](http://abyildirim.com/), [Erdem Eren Çağlar](https://tr.linkedin.com/in/eecaglar), [Aykut Erdem](https://aykuterdem.github.io/), [Erkut Erdem](https://web.cs.hacettepe.edu.tr/~erkut/), [Aysegul Dundar](http://www.cs.bilkent.edu.tr/~adundar/)
 
-[Paper](https://arxiv.org/abs/2406.09368) | [Project Website](https://yigitekin.github.io/CLIPAway/) | [Demo](https://huggingface.co/spaces/yigitekin/CLIPAway) | [BibTeX](#bibtex)
+This repository contains the official implementation of the paper CLIPAway which is accepted to NeurIPS 2024. CLIPAway is novel framework manipulating CLIP embeddings via projection to remove objects using Stable Diffusion prior.
+
+[![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2406.09368) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://yigitekin.github.io/CLIPAway/) [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-yellow)](https://huggingface.co/spaces/yigitekin/CLIPAway)  [![Bibtex](https://img.shields.io/badge/Cite-BibTeX-orange
+)](#bibtex)  
 
 ![CLIPAway Teaser](./assets/teaser.png)
-
-**CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models**
-
-Yiğit Ekin, Ahmet Burak Yildirim, Erdem Eren Çağlar, Aykut Erdem, Erkut Erdem, Aysegul Dundar
 
 ### **Abstract:** 
 
 > Advanced image editing techniques, particularly inpainting, are essential for seamlessly removing unwanted elements while preserving visual integrity. Traditional GAN-based methods have achieved notable success, but recent advancements in diffusion models have produced superior results due to their training on large-scale datasets, enabling the generation of remarkably realistic inpainted images.Despite their strengths, diffusion models often struggle with object removal tasks without explicit guidance, leading to unintended hallucinations of the removed object. To address this issue, we introduce CLIPAway, a novel approach leveraging CLIP embeddings to focus on background regions while excluding foreground elements. CLIPAway enhances inpainting accuracy and quality by identifying embeddings that prioritize the background, thus achieving seamless object removal. Unlike other methods that rely on specialized training datasets or costly manual annotations, CLIPAway provides a flexible, plug-and-play solution compatible with various diffusion-based inpainting techniques. 
 
 ### News
-- Training and inference codes are released. (22.06.2024)
+- **Paper Accepted to NeurIPS 2024** (22.09.2024)
+- **Training and inference codes are released.** (22.06.2024)
 
 ### Cloning the Repository
 
