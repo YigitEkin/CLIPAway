@@ -137,7 +137,7 @@ The description of the parameters in the training configuration file is as follo
 
 
 ### Inference
-**Note:** Our best performing model is built upon [SD-Inpaint](https://huggingface.co/runwayml/stable-diffusion-inpainting) which downscales the provided mask to dimension of the latent for determining the inpainting region. This downscaling can cause some inconsistencies and result in artifacts. To prevent this, we advise you to dilate your masks before using them in the inference process. We provide a script for dilating the masks which can be run as follows:
+**Note:** Our best performing model is built upon [SD-Inpaint](https://huggingface.co/botp/stable-diffusion-v1-5-inpainting) which downscales the provided mask to dimension of the latent for determining the inpainting region. This downscaling can cause some inconsistencies and result in artifacts. To prevent this, we advise you to dilate your masks before using them in the inference process. We provide a script for dilating the masks which can be run as follows:
 
 ```bash
 python3 dilate.py --directory <path_to_masks> --kernel-size 5 --iterations 5
