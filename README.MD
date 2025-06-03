@@ -194,12 +194,15 @@ CLIPAway is implemented on top of the [IP-Adapter](https://github.com/tencent-ai
 ### BibTeX
 
 ```
-@inproceedings{
-ekin2024clipaway,
-title={{CLIPA}way: Harmonizing focused embeddings for removing objects via diffusion models},
-author={Yi{\u{g}}it Ekin and Ahmet Burak Yildirim and Erdem Eren Caglar and Aykut Erdem and Erkut Erdem and Aysegul Dundar},
-booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
-year={2024},
-url={https://openreview.net/forum?id=76CZrhbMoo}
+@inproceedings{NEURIPS2024_1f6f0b6e,
+ author = {Ekin, Yi\u{g}it and Yildirim, Ahmet Burak and Caglar, Erdem Eren and Erdem, Aykut and Erdem, Erkut and Dundar, Aysegul},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+ pages = {17572--17601},
+ publisher = {Curran Associates, Inc.},
+ title = {CLIPAway: Harmonizing focused embeddings for removing objects via diffusion models},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/1f6f0b6eec8a4ff0f6baa707ff91a442-Paper-Conference.pdf},
+ volume = {37},
+ year = {2024}
 }
 ```
