@@ -135,7 +135,6 @@ The description of the parameters in the training configuration file is as follo
 | --ip_adapter_embed_dim        | Embedding dimension for the IP-Adapter model, which defines the size of the feature vectors expected as input by the IP-Adapter. |
 | --device                      | Device used for training, typically set to `"cuda"` for GPU acceleration, which speeds up the training process. |
 
-
 ### Inference
 **Note:** Our best performing model is built upon [SD-Inpaint](https://huggingface.co/botp/stable-diffusion-v1-5-inpainting) which downscales the provided mask to dimension of the latent for determining the inpainting region. This downscaling can cause some inconsistencies and result in artifacts. To prevent this, we advise you to dilate your masks before using them in the inference process. We provide a script for dilating the masks which can be run as follows:
 
